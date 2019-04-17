@@ -33,6 +33,17 @@ window.addEventListener('load', function(){
 	  });
 	}
 
+	window.onclick = function(event){
+		if (!document.querySelector("#ham-icon").contains(event.target)) {
+			console.log("clicked outside of icon")
+		    var dropdown = document.querySelector("nav");
+		    if (dropdown.style.display == "block") {
+		        dropdown.style.display = "none";
+		        console.log("hiding");
+		    }
+	  }
+	}
+
 	
 	function stickyNav(){
 		if (window.pageYOffset >= sticky){
