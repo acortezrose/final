@@ -28,10 +28,6 @@ body {
     line-height: 2em;
 }
 
-/*html {
-	overflow-x: hidden;
-}*/
-
 h1, h2, h3, .brand {
 	font-family: 'Merriweather', serif;
     font-size: 2em;
@@ -78,20 +74,31 @@ p {
 	animation-fill-mode: forwards;
 }
 
-/*.text-container {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	align-items: flex-start;
-
-}*/
-
 .left {
 	float: left;
 }
 
 .right {
 	float: right;
+}
+
+.panel {
+	display:none;
+}
+
+.accordion{
+	font-size: 1em;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
 }
 
 
