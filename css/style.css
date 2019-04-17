@@ -1,0 +1,285 @@
+/*********** Main content ***********/
+
+a {
+	text-decoration: underline;
+	text-decoration-color: #e0cf70;
+	color: #736522;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+audio, img {
+	width: 100%;
+}
+
+body {
+	background-color: #f2f2f2;
+	margin: 0 auto;
+	/*max-width: 800px;*/
+	/*width: 80vw;*/
+	min-height: 100vh;
+	position: relative;
+	overflow-x: hidden;
+
+	font-family: 'Muli', sans-serif;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+/*html {
+	overflow-x: hidden;
+}*/
+
+h1, h2, h3, .brand {
+	font-family: 'Merriweather', serif;
+    font-size: 2em;
+    color: #454545;
+}
+
+h2 {
+	font-size: 1.5em;
+	margin: 15px 0px 5px 0px;
+}
+
+i {
+	font-size: 1.5em;
+}
+
+#main {
+	margin: 0 auto;
+	width: 80%;
+	max-width: 800px;
+	margin-top: 100px;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+.align-top {
+	align-self: start;
+}
+
+.container {
+	background-color: white;
+	margin: 1em 0em 2em 0em;
+	padding: 1.5em;
+
+	display: grid;
+	align-items: center;
+	grid-column-gap: 25px;
+}
+
+.container:hover{
+	animation-name: shadowin;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+/*.text-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+
+}*/
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+
+@keyframes shadowin {
+	from {
+		box-shadow: none;
+	}
+	to {
+		/*-webkit-box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.75);*/
+		/*-moz-box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.75);*/
+		box-shadow: 0px 8px 20px -10px rgba(47,47,47,1);
+	}
+}
+
+
+/*********** Header / Nav ***********/
+
+.brand {
+	color: black;
+	text-decoration: none;
+	flex-grow: 2;
+	padding-left: 1em !important;
+}
+
+.nav-pad {
+	font-size: 1.5em;
+	padding: 1em 0em 1em 0em;
+}
+
+header{
+	position: absolute;
+	width: 100vw;
+	top: 0;
+}
+
+nav {
+	padding: 2.5em 0em;
+	display: none;
+}
+
+nav a {
+	text-decoration: none !important;
+	color: black;
+	padding: 1em;
+}
+
+nav li a:hover, nav li a.current{
+	/*background-color: black;
+	color: white;
+	text-decoration: underline;*/
+	animation-name: fadetoblack;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+nav li a.current {
+	background-color: #736522 !important;
+	color: white !important;
+	text-decoration: underline !important;
+}
+
+nav ul {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+nav ul li {
+	margin: .5em;
+}
+
+#nav-wrap {
+	background-color: #e0cf70;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+
+	font-size: 1em;
+
+	background:  linear-gradient(rgba(224,207,112, .5), rgba(224,207,112, 0.5)), url("../img/rainbow.jpg");
+	background-color: #cccccc;
+	z-index: 1;
+}
+
+#ham-icon{
+	padding-right: 20px;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+}
+
+.sticky + #main {
+	/*padding-top: 80px;*/
+}
+
+@keyframes fadetoblack {
+	from {
+		background-color: inherit; 
+		color: inherit;
+	}
+	to {
+		background-color: #736522; 
+		color: white;
+	}
+}
+
+
+/*********** Footer / Alignment ***********/
+footer {
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+footer ul {
+	list-style: none;
+	text-decoration: none;
+	margin: 0 auto;
+	max-width: 50%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+
+footer ul li{
+	padding: 0em .7em;
+}
+
+#main {
+	padding-top: 25px;
+	padding-bottom: 150px;
+}
+
+
+/*********** Skip to content ***********/
+
+.skip{
+	position: relative;
+	left: -2000px;
+}
+
+.skip:focus {
+	position: static;
+}
+
+
+/*********** Media Query ***********/
+
+@media screen and (min-width: 776px){
+	.brand{
+		font-size: 2.35em;
+	}
+	.container {
+		grid-template-columns: 1fr 2fr;
+		align-items: center;
+		grid-column-gap: 25px;
+	}
+
+	.text-container div img {
+		max-width: 300px;
+		padding: 0em 0em 0em 2.5em;
+	}
+
+	#ham-icon {
+		display: none;
+	}	
+
+	nav {
+		display: block;
+	}
+
+	nav ul {
+		flex-flow: row nowrap;
+	}
+}
+
+@media screen and (prefers-reduced-motion){
+	nav li a:hover, nav li a.current{
+		animation: none;
+		text-decoration: underline !important;
+	}
+
+	.container:hover{
+		animation: none;
+	}
+}
+
